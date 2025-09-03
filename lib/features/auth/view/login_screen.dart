@@ -1,5 +1,7 @@
 // lib/features/auth/view/login_screen.dart
 
+import 'package:engage_app/features/clothing/cubit/clothing_cubit.dart';
+import 'package:engage_app/features/clothing/repository/clothing_repository.dart';
 import 'package:engage_app/features/auth/cubit/auth_cubit.dart';
 import 'package:engage_app/features/home/view/home_screen.dart';
 import 'package:flutter/gestures.dart';
@@ -21,7 +23,15 @@ class LoginScreen extends StatelessWidget {
         listener: (context, state) {
           if (state.status == AuthStatus.success) {
             Navigator.of(context).pushAndRemoveUntil(
-              MaterialPageRoute(builder: (context) => const HomeScreen()),
+              MaterialPageRoute(
+                builder: (_) => BlocProvider(
+                  // ## A CORREÇÃO ESTÁ AQUI ##
+                  create: (context) => ClothingCubit(
+                    context.read<ClothingRepository>(),
+                  )..fetchClothing(), // Adicionamos "..fetchClothing()" para iniciar a busca
+                  child: const HomeScreen(),
+                ),
+              ),
               (Route<dynamic> route) => false,
             );
           }
@@ -59,9 +69,9 @@ class LoginScreen extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         context.read<AuthCubit>().loginUser(
-                          email: emailController.text,
-                          password: passwordController.text,
-                        );
+                              email: emailController.text,
+                              password: passwordController.text,
+                            );
                       },
                       child: const Text('Entrar'),
                     ),
