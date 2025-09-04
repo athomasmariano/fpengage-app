@@ -1,5 +1,3 @@
-// lib/features/clothing/models/clothing_item_model.dart
-
 import 'package:equatable/equatable.dart';
 
 class ClothingItem extends Equatable {

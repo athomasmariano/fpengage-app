@@ -1,5 +1,3 @@
-// lib/features/auth/view/register_screen.dart
-
 import 'package:engage_app/features/auth/cubit/auth_cubit.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';

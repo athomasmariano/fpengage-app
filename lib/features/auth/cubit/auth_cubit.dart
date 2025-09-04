@@ -1,5 +1,3 @@
-// lib/features/auth/cubit/auth_cubit.dart
-
 import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
@@ -41,7 +39,6 @@ class AuthCubit extends Cubit<AuthState> {
     log('1. [AuthCubit] Tentando fazer login com o email: $email');
     emit(state.copyWith(status: AuthStatus.loading));
 
-    // try-catch restaurado!
     try {
       await _authRepository.login(email: email, password: password);
       emit(state.copyWith(status: AuthStatus.success));
@@ -55,6 +52,5 @@ class AuthCubit extends Cubit<AuthState> {
   /// Método para fazer logout (apagar o token)
   Future<void> logoutUser() async {
     await _authRepository.deleteToken();
-    // Você pode emitir um estado aqui se a UI precisar reagir ao logout
   }
 }

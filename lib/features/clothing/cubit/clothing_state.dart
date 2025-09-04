@@ -1,4 +1,3 @@
-// lib/features/clothing/cubit/clothing_state.dart
 part of 'clothing_cubit.dart';
 
 enum ClothingStatus { initial, loading, success, error }

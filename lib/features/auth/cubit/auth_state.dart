@@ -1,4 +1,3 @@
-// lib/features/auth/cubit/auth_state.dart
 part of 'auth_cubit.dart';
 
 enum AuthStatus { initial, loading, success, error }

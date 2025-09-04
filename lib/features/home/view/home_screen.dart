@@ -1,5 +1,3 @@
-// lib/features/home/view/home_screen.dart
-
 import 'dart:developer';
 import 'package:engage_app/features/auth/cubit/auth_cubit.dart';
 import 'package:engage_app/features/auth/view/login_screen.dart';

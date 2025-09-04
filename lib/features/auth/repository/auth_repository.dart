@@ -1,5 +1,3 @@
-// lib/features/auth/repository/auth_repository.dart
-
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -12,7 +10,6 @@ class AuthRepository {
   final _storage = const FlutterSecureStorage();
 
   // 2. O construtor agora exige que uma instância do Dio seja passada.
-  // Isso é chamado de Injeção de Dependência.
   AuthRepository(this._dio);
 
   /// Método para registrar um novo usuário

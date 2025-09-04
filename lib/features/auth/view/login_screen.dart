@@ -1,5 +1,3 @@
-// lib/features/auth/view/login_screen.dart
-
 import 'package:engage_app/features/clothing/cubit/clothing_cubit.dart';
 import 'package:engage_app/features/clothing/repository/clothing_repository.dart';
 import 'package:engage_app/features/auth/cubit/auth_cubit.dart';
@@ -25,10 +23,9 @@ class LoginScreen extends StatelessWidget {
             Navigator.of(context).pushAndRemoveUntil(
               MaterialPageRoute(
                 builder: (_) => BlocProvider(
-                  // ## A CORREÇÃO ESTÁ AQUI ##
                   create: (context) => ClothingCubit(
                     context.read<ClothingRepository>(),
-                  )..fetchClothing(), // Adicionamos "..fetchClothing()" para iniciar a busca
+                  )..fetchClothing(), // "..fetchClothing()" para iniciar a busca
                   child: const HomeScreen(),
                 ),
               ),

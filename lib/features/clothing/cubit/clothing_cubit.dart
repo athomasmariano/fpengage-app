@@ -1,7 +1,5 @@
-// lib/features/clothing/cubit/clothing_cubit.dart
-
 import 'dart:developer';
-import 'dart:io'; // 1. Importe a biblioteca 'io' para usar a classe File
+import 'dart:io';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:engage_app/features/clothing/models/clothing_item_model.dart';
@@ -34,7 +32,7 @@ class ClothingCubit extends Cubit<ClothingState> {
     }
   }
 
-  /// **[ATUALIZADO]** Adiciona uma nova peça de roupa e atualiza a lista
+  /// Adiciona uma nova peça de roupa e atualiza a lista
   Future<void> addClothingItem({
     required String name,
     required String category,

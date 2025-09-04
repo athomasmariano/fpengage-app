@@ -1,5 +1,3 @@
-// lib/features/clothing/view/add_clothing_screen.dart
-
 import 'dart:developer';
 import 'dart:io';
 import 'package:engage_app/features/clothing/cubit/clothing_cubit.dart';

@@ -1,7 +1,5 @@
-// lib/features/clothing/repository/clothing_repository.dart
-
 import 'dart:developer';
-import 'dart:io'; // Importante para usar a classe 'File'
+import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:engage_app/features/clothing/models/clothing_item_model.dart';
 
@@ -35,11 +33,11 @@ class ClothingRepository {
     }
   }
 
-  /// **[ATUALIZADO]** Cria um novo item de roupa enviando um arquivo de imagem.
+  /// Cria um novo item de roupa enviando um arquivo de imagem.
   Future<ClothingItem> createClothingItem({
     required String name,
     required String category,
-    required File imageFile, // 1. Agora recebe um arquivo (File)
+    required File imageFile, // Recebe um arquivo (File)
   }) async {
     try {
       log('[ClothingRepository] Criando novo item com upload de imagem...');
